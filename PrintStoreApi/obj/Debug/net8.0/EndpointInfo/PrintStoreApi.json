@@ -1,0 +1,3023 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PrintStoreApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auth/signup": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/validateAccount": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateAccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateAccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateAccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Category/GetAll": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCategoryDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetCategoriesWithCustomizableProducts": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalCategoryDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetPortalCategoriesById": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalCategoryDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetPortalMainCategories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalCategoryDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/FetchProducts": {
+      "get": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncProductsResponseListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/SyncProduct": {
+      "post": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncProductsResponse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncProductsResponse"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncProductsResponse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/FetchCategories": {
+      "get": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCategorySyncDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/SyncCategories": {
+      "post": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/SyncCategory": {
+      "post": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCategorySyncDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCategorySyncDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCategorySyncDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/SyncCustomizableProducts": {
+      "get": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PrintfulSync/ProductSizeGuideByProductId": {
+      "get": {
+        "tags": [
+          "PrintfulSync"
+        ],
+        "parameters": [
+          {
+            "name": "pId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductSizeGuideDTOResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetAll": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreProductDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetStoreVariantsByProduct": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetStoreVariantByProductIdResponseListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductById": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Product/GetStoreProductsByCatId": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalStoreProductDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetCustomizeProductsByCategortyId": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomizableProductDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetCustomizeProducDetailstbyId": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomizableProductDTOListResponseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/User/getUserData": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/editUser": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiMessage": {
+        "type": "object",
+        "properties": {
+          "showMessage": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AvailableRegion": {
+        "required": [
+          "variantId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "regionName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "availableStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "customizableVarint": {
+            "$ref": "#/components/schemas/CustomizableVarint"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AvailableRegionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "availableStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "regionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "customizableVarint": {
+            "$ref": "#/components/schemas/CustomizableVariantDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseProduct": {
+        "required": [
+          "printfulId",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productType": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productTypeName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "brand": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currency": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isDiscontinued": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageFulfilmentTime": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "originCountry": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "baseVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseVariant"
+            },
+            "nullable": true
+          },
+          "storeProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreProduct"
+            },
+            "nullable": true
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseProductSyncResponse": {
+        "required": [
+          "printfulId",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productType": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productTypeName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "brand": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currency": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isDiscontinued": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageFulfilmentTime": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "originCountry": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "baseVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseVariant"
+            },
+            "nullable": true
+          },
+          "storeProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreProduct"
+            },
+            "nullable": true
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          },
+          "syncStatus": {
+            "$ref": "#/components/schemas/SyncProductStatus"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/difference"
+            },
+            "nullable": true
+          },
+          "dbID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseVariant": {
+        "required": [
+          "baseProductId",
+          "printfulId",
+          "printfulProductId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "variantName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode1": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode2": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "size": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseVariantSyncResponse": {
+        "required": [
+          "baseProductId",
+          "printfulId",
+          "printfulProductId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "variantName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode1": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode2": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "size": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          },
+          "syncStatus": {
+            "$ref": "#/components/schemas/SyncProductStatus"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/difference"
+            },
+            "nullable": true
+          },
+          "dbID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BooleanResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableProduct": {
+        "required": [
+          "printfulId",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productType": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productTypeName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "brand": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currency": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isDiscontinued": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageFulfilmentTime": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "originCountry": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "customizableVarints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomizableVarint"
+            },
+            "nullable": true
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableProductDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productType": {
+            "type": "string",
+            "nullable": true
+          },
+          "productTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "brand": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDiscontinued": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageFulfilmentTime": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "originCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "minPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "customizableVarints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomizableVariantDTO"
+            },
+            "nullable": true
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableProductDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomizableProductDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableProductDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CustomizableProductDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableVariantDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "variantName": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode1": {
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode2": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "inStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customizableProduct": {
+            "$ref": "#/components/schemas/CustomizableProductDTO"
+          },
+          "productMaterials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductMaterialDTO"
+            },
+            "nullable": true
+          },
+          "availableRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AvailableRegionDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomizableVarint": {
+        "required": [
+          "baseProductId",
+          "printfulId",
+          "printfulProductId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "variantName": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode1": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode2": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "size": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customizableProduct": {
+            "$ref": "#/components/schemas/CustomizableProduct"
+          },
+          "productMaterials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductMaterial"
+            },
+            "nullable": true
+          },
+          "availableRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AvailableRegion"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditUserRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetStoreVariantByProductIdResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "availabilityStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "sku": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantName": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "categoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSynced": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetStoreVariantByProductIdResponseListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetStoreVariantByProductIdResponse"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetStoreVariantByProductIdResponseListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/GetStoreVariantByProductIdResponseListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequestDTO": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 8,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeasurementDTO": {
+        "type": "object",
+        "properties": {
+          "typeLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeasurementValueDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeasurementValueDTO": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "minValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxValue": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalCategoryDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "subCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalCategoryDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalCategoryDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalCategoryDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalCategoryDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PortalCategoryDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalStoreProductDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalStoreProductDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalStoreProductDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortalStoreProductDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PortalStoreProductDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategory": {
+        "required": [
+          "printfulId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "parentPrintfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "imageUrl": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "subCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCategory"
+            },
+            "nullable": true
+          },
+          "parentCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          },
+          "baseProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseProduct"
+            },
+            "nullable": true
+          },
+          "customizableProduct": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomizableProduct"
+            },
+            "nullable": true
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategoryDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentPrintfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "subCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCategoryDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategoryDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCategoryDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategoryDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ProductCategoryDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategorySyncDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentPrintfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "subCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCategoryDTO"
+            },
+            "nullable": true
+          },
+          "syncStatus": {
+            "$ref": "#/components/schemas/SyncProductStatus"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/difference"
+            },
+            "nullable": true
+          },
+          "dbID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parantTitle": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategorySyncDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCategorySyncDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCategorySyncDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ProductCategorySyncDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductMaterial": {
+        "required": [
+          "variantId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "materialName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "materialPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "customizableVarint": {
+            "$ref": "#/components/schemas/CustomizableVarint"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductMaterialDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "materialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "materialPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "customizableVarint": {
+            "$ref": "#/components/schemas/CustomizableVariantDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductSizeGuideDTO": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "availableSizes": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "sizeTables": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SizeTableDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductSizeGuideDTOResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ProductSizeGuideDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequestDTO": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "mobileNumber": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 8,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SizeTableDTO": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeasurementDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreProduct": {
+        "required": [
+          "baseProductId",
+          "printfulId",
+          "productName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "syncedVariantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thumbnailUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreProductDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "syncedVariantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariantDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreProductDTOListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreProductDTO"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreProductDTOListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/StoreProductDTOListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreProductSyncResponse": {
+        "required": [
+          "baseProductId",
+          "printfulId",
+          "productName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "variantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "syncedVariantCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thumbnailUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariant"
+            },
+            "nullable": true
+          },
+          "syncStatus": {
+            "$ref": "#/components/schemas/SyncProductStatus"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/difference"
+            },
+            "nullable": true
+          },
+          "dbID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreVariant": {
+        "required": [
+          "baseProductId",
+          "baseVariantId",
+          "printfulId",
+          "printfulStoreProductId",
+          "printfulVariantId",
+          "storeProductId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storeProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseVariantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "printfulStoreProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "printfulVariantId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "availabilityStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sku": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "variantName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSynced": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VariantFile"
+            },
+            "nullable": true
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeProduct": {
+            "$ref": "#/components/schemas/StoreProduct"
+          },
+          "baseVariant": {
+            "$ref": "#/components/schemas/BaseVariant"
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreVariantDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storeProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseVariantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "type": "string",
+            "nullable": true
+          },
+          "printfulStoreProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "printfulVariantId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "availabilityStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "sku": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantName": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSynced": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VariantFileDTO"
+            },
+            "nullable": true
+          },
+          "storeProduct": {
+            "$ref": "#/components/schemas/StoreProductDTO"
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategoryDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StoreVariantSyncResponse": {
+        "required": [
+          "baseProductId",
+          "baseVariantId",
+          "printfulId",
+          "printfulStoreProductId",
+          "printfulVariantId",
+          "storeProductId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfulId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "baseProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storeProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseVariantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "externalID": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "printfulStoreProductId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "printfulVariantId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "availabilityStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sku": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "variantName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isIgnored": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSynced": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VariantFile"
+            },
+            "nullable": true
+          },
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProduct"
+          },
+          "storeProduct": {
+            "$ref": "#/components/schemas/StoreProduct"
+          },
+          "baseVariant": {
+            "$ref": "#/components/schemas/BaseVariant"
+          },
+          "productCategory": {
+            "$ref": "#/components/schemas/ProductCategory"
+          },
+          "syncStatus": {
+            "$ref": "#/components/schemas/SyncProductStatus"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/difference"
+            },
+            "nullable": true
+          },
+          "dbID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncProductStatus": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SyncProductsResponse": {
+        "type": "object",
+        "properties": {
+          "baseProduct": {
+            "$ref": "#/components/schemas/BaseProductSyncResponse"
+          },
+          "storeProduct": {
+            "$ref": "#/components/schemas/StoreProductSyncResponse"
+          },
+          "baseVariant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseVariantSyncResponse"
+            },
+            "nullable": true
+          },
+          "storeVariant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreVariantSyncResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncProductsResponseListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncProductsResponse"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncProductsResponseListResponseResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "apiMessage": {
+            "$ref": "#/components/schemas/ApiMessage"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SyncProductsResponseListResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidateAccountRequest": {
+        "required": [
+          "email",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "token": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VariantFile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "printfultId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nameFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "previewUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storeVariant": {
+            "$ref": "#/components/schemas/StoreVariant"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VariantFileDTO": {
+        "type": "object",
+        "properties": {
+          "printfultId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nameFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "previewUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "difference": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "oldValue": {
+            "nullable": true
+          },
+          "newValue": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@PrintStoreApi_HostAddress = http://localhost:5153
+
+GET {{PrintStoreApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,32 @@
+{
+  "Version": 1,
+  "Hash": "qnL13mPxZrlrKHkEfesO1fC2Y7pbIIVQXWerYo36FkM=",
+  "Source": "PrintStoreApi",
+  "BasePath": "_content/PrintStoreApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\p-proj\\PrintStoreApi\\PrintfulIntegration\\PrintfulIntegration.csproj",
+      "Version": 2,
+      "Source": "PrintfulIntegration",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PrintStoreApi\\wwwroot",
+      "Source": "PrintStoreApi",
+      "ContentRoot": "C:\\p-proj\\PrintStoreApi\\PrintStoreApi\\wwwroot\\",
+      "BasePath": "_content/PrintStoreApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}
